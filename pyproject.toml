@@ -26,7 +26,7 @@ dev = [
 
 # pyproject.toml
 [tool.pytest.ini_options]
-pythonpath = ["src"]  # Важно для src-структуры!
+pythonpath = ["app"]  # Важно для src-структуры!
 testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
