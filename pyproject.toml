@@ -24,10 +24,11 @@ dev = [
     "httpx>=0.26.0",
 ]
 
-# Настройки pytest
+# pyproject.toml
 [tool.pytest.ini_options]
-pythonpath = ["src"]  # 🔹 Ключевая строка!
+pythonpath = ["src"]  # Важно для src-структуры!
 testpaths = ["tests"]
-python_files = ["test_*.py"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = ["-v"]
+addopts = "-v --tb=short"
