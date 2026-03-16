@@ -1,8 +1,11 @@
 # app/tests/test_simple.py
 from fastapi.testclient import TestClient
-import app
+from main import app
 
 client = TestClient(app)
+
+def test_something():
+    assert app is not None
 
 def test_root_returns_200():
     """Тест: главная страница возвращает статус 200"""
