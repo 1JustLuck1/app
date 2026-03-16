@@ -21,10 +21,12 @@ jobs:
           python-version: "3.12"
           enable-cache: true
 
-      - name: 📦 Install dependencies (main + dev)
-        run: uv pip install -e ".[dev]"
-        # ИЛИ для dependency-groups:
-        # run: uv pip install -e . --group dev
+      - name: 📦 Install dependencies with --system flag
+        # 🔥 --system: устанавливаем в системный Python (без venv)
+        # 🔥 --group dev: устанавливаем зависимости из группы dev
+        run: uv pip install --system -e ".[dev]"
+        # ИЛИ с новым синтаксисом групп:
+        # run: uv pip install --system -e . --group dev
 
       - name: 🧪 Run tests
         run: uv run pytest app/tests/ -v

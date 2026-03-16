@@ -14,9 +14,16 @@ dependencies = [
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.uv]
-# Настройки uv (опционально)
-dev-dependencies = [
+# 🔥 НОВЫЙ синтаксис: группы зависимостей (вместо tool.uv.dev-dependencies)
+[dependency-groups]
+dev = [
     "pytest>=8.0.0",
     "httpx>=0.26.0",
 ]
+
+# Настройки pytest
+[tool.pytest.ini_options]
+testpaths = ["app/tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = ["-v"]
