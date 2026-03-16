@@ -27,5 +27,5 @@ jobs:
       - name: Install package editable
         run: uv pip install -e .
 
-      - name: 🧪 Run tests
-        run: uv run pytest tests/ -v
+      - name: Run tests
+        run: uv run python -m pytest -v --tb=short
