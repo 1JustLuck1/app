@@ -20,3 +20,8 @@ dev-dependencies = [
     "pytest>=8.0.0",
     "httpx>=0.26.0",
 ]
+
+# pyproject.toml
+[tool.uv.dev-dependencies]
+pytest = "^8.0.0"
+httpx = "^0.26.0"
