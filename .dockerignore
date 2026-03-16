@@ -1,0 +1,42 @@
+# Виртуальные окружения
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+*.env
+
+# uv specific
+.uv/
+*.lock
+
+# Logs
+*.log
+logs/
+
+# Docker (не копируем конфиги в образ)
+Dockerfile
+docker-compose*.yml
+!.dockerignore
+
+# Тесты и документация
+tests/
+*.md
+docs/
+
+# ⚠️ НЕ исключайте: *.py, templates/, config.py и т.д.

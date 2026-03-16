@@ -1,0 +1,22 @@
+[project]
+name = "app"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "asyncpg>=0.31.0",
+    "fastapi[standard]>=0.131.0",
+    "sqlalchemy>=2.0.46",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+# Настройки uv (опционально)
+dev-dependencies = [
+    "pytest>=8.0.0",
+    "httpx>=0.26.0",
+]
