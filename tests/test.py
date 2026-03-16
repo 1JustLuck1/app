@@ -2,7 +2,7 @@
 from fastapi.testclient import TestClient
 from app.main import app
 
-# Создаём тестовый клиент
+# Создаём тестовый клиент 
 client = TestClient(app)
 
 def test_root_returns_200():
