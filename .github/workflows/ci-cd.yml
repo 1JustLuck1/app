@@ -32,10 +32,17 @@ jobs:
         run: uv sync --dev
         
       - name: Run tests
-        run: uv run pytest -v --tb=short
+        run: uv run python -m pytest -v --tb=short
         env:
-          TESTING: "true"
-          secret_key: test_key_for_ci_only_12345678901234567890
+          # 🔹 Тестовые значения для pydantic settings
+          postgres_user: test_user
+          postgres_password: test_password
+          postgres_db: test_db
+          postgres_host: localhost
+          secret_key: test_secret_key_for_ci_only
+          
+          # 🔹 Опционально: использовать SQLite для тестов
+          database_url: sqlite:///./test.db
 
   # ─────────────────────────────────────
   # 2. Сборка Docker-образа (CD)
