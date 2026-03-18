@@ -19,10 +19,11 @@ services:
       start_period: 30s
 
   app:
-    build:
-      context: .                    # ← Точка = текущая папка (где docker-compose.yml)
-      dockerfile: Dockerfile
-      target: runtime
+    image: ghcr.io/${GITHUB_USERNAME:-1justluck1}/${GITHUB_REPO:-app}:latest
+    # build:
+    #   context: .                    # ← Точка = текущая папка (где docker-compose.yml)
+    #   dockerfile: Dockerfile
+    #   target: runtime
     container_name: fastapi_app
     restart: unless-stopped
     ports:
